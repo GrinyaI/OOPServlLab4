@@ -57,7 +57,6 @@ public class BookServlet extends HttpServlet {
         Gson gson = new GsonBuilder().create();
         Book book = gson.fromJson(jsonRequest.toString(), Book.class);
 
-        // Чтение текущего списка автомобилей из файла
         List<Book> books = new ArrayList<>();
         try (BufferedReader fileReader = new BufferedReader(new FileReader(FILE_PATH))) {
             Type listType = new TypeToken<ArrayList<Book>>() {}.getType();
